@@ -1,0 +1,19 @@
+<h2> Author : </h2>
+
+<ul>
+  <li>Id: <strong>{{ author?.id }}</strong></li>
+  <li>Name: <strong>{{ author?.attributes.name }}</strong></li>
+  <li>Date of birth: <strong>{{ author?.attributes.date_of_birth | date }}</strong></li>
+  <li>Date of dead: <strong>{{ author?.attributes.date_of_death | date }}</strong></li>
+</ul>
+
+<h2> Books : </h2>
+
+<p *ngFor="let book of author.relationships.books?.data"  class="books">
+  <li>Titre :<strong>{{book?.attributes.title}}</strong></li>
+  <li>ISBN :<strong>{{book?.attributes.isbn}}</strong></li>
+  <li>Date Published :<strong>{{book?.attributes.date_published | date}}</strong></li>
+</p> 
+<p>
+  <a [routerLink]="['../../']" >Retour</a>
+</p>

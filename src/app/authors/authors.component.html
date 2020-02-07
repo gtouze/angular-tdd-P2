@@ -1,0 +1,11 @@
+hello
+<p *ngFor="let author of authors?.data;"  class="authors">
+  <!-- <a href= "/author/{{author.id}}">
+    name: {{ author?.attributes?.name }} <br />
+  </a> -->
+  <a [routerLink]="['author', author?.id]" >  {{ author?.attributes?.name }} </a>
+</p>
+
+<!--   
+  id: {{ author?.id }} <br />
+  birth date: {{ author?.attributes?.date_of_birth | date }} -->
